@@ -48,10 +48,33 @@ function get(number){
   return currentNode;
 }
 
-function remove(){
-
+function remove(number){
+  var currentNode = get(number);
+  var previousNode = get(number - 1);
+  if(currentNode === false){
+    return false;
+  }else if(number === 0){
+    head = currentNode.next;
+  }
+  if(currentNode.next === null){
+    tail = previousNode;
+  }
+  previousNode.next = currentNode.next;
 }
-function insert(){
+
+function insert(value, number){
+  var currentNode = get(number);
+  var nextNode = currentNode.next;
+
+  if(number === 0){
+    head = {
+      value: value,
+      next: head,
+    };
+  }
+  if(currentNode === false){
+    return false;
+  }
 
 }
 return{
