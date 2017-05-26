@@ -63,7 +63,7 @@ function remove(number){
 }
 
 function insert(value, number){
-  var currentNode = get(number);
+  var currentNode = get(number - 1);
   var nextNode = currentNode.next;
 
   if(number === 0){
@@ -75,8 +75,13 @@ function insert(value, number){
   if(currentNode === false){
     return false;
   }
+  currentNode.next = {
+    value: value,
+    next: nextNode
+  };
 
 }
+
 return{
   getHead: getHead,
   getTail: getTail,
