@@ -22,14 +22,32 @@ function add(value){
     };
     tail = head;
   }else{
-
-
+    tail.next = {
+      value: value,
+      next: null,
+    };
+    tail = tail.next;
   }
-
+  return tail;
 }
+
+
 function get(number){
-
+  var count = 0;
+  var currentNode = head;
+  if(head === null){
+      return false;
+  }
+  while(count != number){
+    if(currentNode.next === null){
+      return false;
+    }
+    currentNode = currentNode.next;
+    count++;
+  }
+  return currentNode;
 }
+
 function remove(){
 
 }
